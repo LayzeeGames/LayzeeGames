@@ -5,6 +5,8 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+<<<<<<< HEAD
+=======
 				"C:/Users/KiddL/Documents/GitHub/LayzeeGames/FriendsNotIncluded/Content/FriendsNotIncluded/Minigames/GodsArena/L_GodsArena.umap",
 				"C:/Users/KiddL/Documents/GitHub/LayzeeGames/FriendsNotIncluded/Content/FriendsNotIncluded/Minigames/GodsArena/Assets/SM_ArenaPlatform.uasset",
 				"C:/Users/KiddL/Documents/GitHub/LayzeeGames/FriendsNotIncluded/Content/FriendsNotIncluded/Minigames/GodsArena/Assets/Disc_F95670C4.uasset",
@@ -42,6 +44,7 @@
 				"C:/Users/KiddL/Documents/GitHub/LayzeeGames/FriendsNotIncluded/Content/FriendsNotIncluded/Core/Input/Actions/IA_Jump.uasset",
 				"C:/Users/KiddL/Documents/GitHub/LayzeeGames/FriendsNotIncluded/Content/FriendsNotIncluded/Minigames/GodsArena/_GENERATED/KiddL/SM_ArenaPlatform.uasset",
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/BP_Test.uasset",
+>>>>>>> dev
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/BP_Campbell_FNICharacter.uasset",
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/BP_Campbell_FNIController.uasset",
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Campbell/Lvl_Campbell_Level_blockout/C/GS/D387PR6FBZHIBH8RQ45U8U.uasset",
@@ -77,6 +80,8 @@
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.uasset",
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Input/IA_RollDice.uasset",
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Input/IMC_Dice.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Data/ST_TieGroup.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/BP_Test.uasset",
 				"C:/Users/KiddL/Documents/GitHub/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Level_blockout/E/VB/SDL41GUBSZIPS77NPKRHKT.uasset",
 				"C:/Users/KiddL/Documents/GitHub/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Level_blockout/E/QZ/0FIV5TL5ASPUYB759O8FFD.uasset",
 				"C:/Users/KiddL/Documents/GitHub/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Level_blockout/E/BY/ITX40AAGB6PA2ZQ66CBAYP.uasset",
