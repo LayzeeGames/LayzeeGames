@@ -43,7 +43,12 @@
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Data/DT_ChampionDice.uasset",
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/BP_Campbell_FNIController.uasset",
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Input/IMC_Dice.uasset",
-				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Data/ST_ChampionDiceData.uasset"
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Data/ST_ChampionDiceData.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Campbell/Lvl_Campbell_Level_blockout/E/5A/QAL0DOZ896G34N8CLZ8N31.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Campbell/Lvl_Campbell_Level_blockout/D/MG/V18MSE44KWKPJC1KCFP78T.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Input/IA_ChoosePathLeft.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Input/IA_ChoosePathRight.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/BoardSystem/UI/WBP_PathChoicePrompt.uasset"
 			]
 		}
 	]
