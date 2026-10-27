@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "FriendsNotIncluded",
+			"Path": "..\\Source\\FriendsNotIncluded.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "FriendsNotIncludedEditor",
+			"Path": "..\\Source\\FriendsNotIncludedEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

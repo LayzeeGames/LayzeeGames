@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\group project\\layzeegames\\friendsnotincluded\\source\\friendsnotincluded\\fnigameinstance.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\group project\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\x64\\friendsnotincludededitor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_3.h.pch",
+        "Includes": [
+            "c:\\group project\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\friendsnotincluded\\definitions.friendsnotincluded.h",
+            "c:\\group project\\layzeegames\\friendsnotincluded\\source\\friendsnotincluded\\fnigameinstance.h",
+            "c:\\group project\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fnigameinstance.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
