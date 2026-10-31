@@ -16,14 +16,21 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
+// ********** Begin Delegate FOnPhilosophersStoneCompleted *****************************************
+#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_11_DELEGATE \
+FRIENDSNOTINCLUDED_API void FOnPhilosophersStoneCompleted_DelegateWrapper(const FMulticastScriptDelegate& OnPhilosophersStoneCompleted, int32 WinnerSlot);
+
+
+// ********** End Delegate FOnPhilosophersStoneCompleted *******************************************
+
 // ********** Begin Class UFNIGameInstance *********************************************************
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execAwardFragment);
 
 
 FRIENDSNOTINCLUDED_API UClass* Z_Construct_UClass_UFNIGameInstance_NoRegister();
 
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUFNIGameInstance(); \
 	friend struct Z_Construct_UClass_UFNIGameInstance_Statics; \
@@ -34,7 +41,7 @@ public: \
 	DECLARE_SERIALIZER(UFNIGameInstance)
 
 
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UFNIGameInstance(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -46,13 +53,13 @@ public: \
 	NO_API virtual ~UFNIGameInstance();
 
 
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_12_PROLOG
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_15_GENERATED_BODY \
+#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_17_PROLOG
+#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_INCLASS_NO_PURE_DECLS \
+	FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -6,6 +6,11 @@
 #include "Engine/GameInstance.h"
 #include "FNIGameInstance.generated.h"
 
+
+//Event that that will tell the blueprints when sopmeone has completed their Philosopher's Stone, int32 is the player slot of the winning player
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPhilosophersStoneCompleted, int32, WinnerSlot);
+
+
 /**
  * 
  */
@@ -40,5 +45,9 @@ public:
 	//Stores the player slot of the winning player, -1 if no player has won yet
 	UPROPERTY(BlueprintReadOnly, Category = "Player Progress")
 	int32 WinningPlayerSlot = -1;
+
+	//bluepritns can listen to this event when a player wins
+	UPROPERTY(BlueprintAssignable, Category = "Player Progress")
+	FOnPhilosophersStoneCompleted OnPhilosophersStoneCompleted;
 	
 };

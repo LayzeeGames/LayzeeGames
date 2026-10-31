@@ -46,6 +46,9 @@ bool UFNIGameInstance::AwardFragment(int32 PlayerSlot)
         // The player has completed their Philosopher's Stone
         bGameOver = true;
         WinningPlayerSlot = PlayerSlot;
+
+		// tell any listening blueprints that a player has completed their Philosopher's Stone, send winning player slot with the event
+		OnPhilosophersStoneCompleted.Broadcast(PlayerSlot);
     }
 
     // Fragment awarded successfully

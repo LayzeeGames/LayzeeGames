@@ -15,8 +15,59 @@ void EmptyLinkFunctionForGeneratedCodeFNIGameInstance() {}
 ENGINE_API UClass* Z_Construct_UClass_UGameInstance();
 FRIENDSNOTINCLUDED_API UClass* Z_Construct_UClass_UFNIGameInstance();
 FRIENDSNOTINCLUDED_API UClass* Z_Construct_UClass_UFNIGameInstance_NoRegister();
+FRIENDSNOTINCLUDED_API UFunction* Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature();
 UPackage* Z_Construct_UPackage__Script_FriendsNotIncluded();
 // ********** End Cross Module References **********************************************************
+
+// ********** Begin Delegate FOnPhilosophersStoneCompleted *****************************************
+struct Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics
+{
+	struct _Script_FriendsNotIncluded_eventOnPhilosophersStoneCompleted_Parms
+	{
+		int32 WinnerSlot;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Event that that will tell the blueprints when sopmeone has completed their Philosopher's Stone, int32 is the player slot of the winning player\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Event that that will tell the blueprints when sopmeone has completed their Philosopher's Stone, int32 is the player slot of the winning player" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_WinnerSlot;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FDelegateFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::NewProp_WinnerSlot = { "WinnerSlot", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_FriendsNotIncluded_eventOnPhilosophersStoneCompleted_Parms, WinnerSlot), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::NewProp_WinnerSlot,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FDelegateFunctionParams Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UPackage__Script_FriendsNotIncluded, nullptr, "OnPhilosophersStoneCompleted__DelegateSignature", Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::_Script_FriendsNotIncluded_eventOnPhilosophersStoneCompleted_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::_Script_FriendsNotIncluded_eventOnPhilosophersStoneCompleted_Parms) < MAX_uint16);
+UFunction* Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUDelegateFunction(&ReturnFunction, Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+void FOnPhilosophersStoneCompleted_DelegateWrapper(const FMulticastScriptDelegate& OnPhilosophersStoneCompleted, int32 WinnerSlot)
+{
+	struct _Script_FriendsNotIncluded_eventOnPhilosophersStoneCompleted_Parms
+	{
+		int32 WinnerSlot;
+	};
+	_Script_FriendsNotIncluded_eventOnPhilosophersStoneCompleted_Parms Parms;
+	Parms.WinnerSlot=WinnerSlot;
+	OnPhilosophersStoneCompleted.ProcessMulticastDelegate<UObject>(&Parms);
+}
+// ********** End Delegate FOnPhilosophersStoneCompleted *******************************************
 
 // ********** Begin Class UFNIGameInstance Function AwardFragment **********************************
 struct Z_Construct_UFunction_UFNIGameInstance_AwardFragment_Statics
@@ -164,6 +215,16 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 		{ "ToolTip", "Stores the player slot of the winning player, -1 if no player has won yet" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnPhilosophersStoneCompleted_MetaData[] = {
+		{ "Category", "Player Progress" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//bluepritns can listen to this event when a player wins\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "bluepritns can listen to this event when a player wins" },
+#endif
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerFragments_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_PlayerFragments;
@@ -171,6 +232,7 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 	static void NewProp_bGameOver_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bGameOver;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_WinningPlayerSlot;
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnPhilosophersStoneCompleted;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -191,12 +253,14 @@ void Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bGameOver_SetBit(void*
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bGameOver = { "bGameOver", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UFNIGameInstance), &Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bGameOver_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bGameOver_MetaData), NewProp_bGameOver_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_WinningPlayerSlot = { "WinningPlayerSlot", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, WinningPlayerSlot), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WinningPlayerSlot_MetaData), NewProp_WinningPlayerSlot_MetaData) };
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_OnPhilosophersStoneCompleted = { "OnPhilosophersStoneCompleted", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, OnPhilosophersStoneCompleted), Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnPhilosophersStoneCompleted_MetaData), NewProp_OnPhilosophersStoneCompleted_MetaData) }; // 2519598863
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFNIGameInstance_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerFragments_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerFragments,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_FragmentsRequiredToWin,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bGameOver,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_WinningPlayerSlot,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_OnPhilosophersStoneCompleted,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UFNIGameInstance_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UFNIGameInstance_Statics::DependentSingletons[])() = {
@@ -236,10 +300,10 @@ UFNIGameInstance::~UFNIGameInstance() {}
 struct Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 779708102U) },
+		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 1929385222U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_3953763267(TEXT("/Script/FriendsNotIncluded"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_469071136(TEXT("/Script/FriendsNotIncluded"),
 	Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
