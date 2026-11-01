@@ -1,0 +1,9 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.FriendsNotIncluded.gen.cpp.obj": [
+			"FNIGameInstance.gen.cpp.obj",
+			"FriendsNotIncluded.init.gen.cpp.obj"
+		]
+	}
+}
