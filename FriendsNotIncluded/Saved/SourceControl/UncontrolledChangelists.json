@@ -43,7 +43,23 @@
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Data/DT_ChampionDice.uasset",
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/BP_Campbell_FNIController.uasset",
 				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Input/IMC_Dice.uasset",
-				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Data/ST_ChampionDiceData.uasset"
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Data/ST_ChampionDiceData.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Campbell/Lvl_Campbell_Level_blockout/E/5A/QAL0DOZ896G34N8CLZ8N31.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Campbell/Lvl_Campbell_Level_blockout/D/MG/V18MSE44KWKPJC1KCFP78T.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Input/IA_ChoosePathLeft.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/DiceSystem/Input/IA_ChoosePathRight.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Campbell/Lvl_Campbell_Level_blockout/4/GX/BJ28WE0SLZULHJBNZ898OX.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Campbell/Lvl_Campbell_Level_blockout/3/4Q/1Y19LSRYKU9SJL0W6HECL4.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Campbell/Lvl_Campbell_Level_blockout/7/FX/6XMB87AD4EMYFHENHJYSNK.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Campbell/Lvl_Campbell_Level_blockout/2/9K/VO0F68RH0MSVW6K38VJJDB.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/__ExternalActors__/Campbell/Lvl_Campbell_Level_blockout/7/TA/9LJV8GB8UT6X5WXSX9YIHB.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/UI/WBP_PathChoicePrompt.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/UI/WBP_VictoryScreen.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/Components/BPC_FragmentRewards.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/Minigames/BP_MinigameManager.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/Minigames/MiniGameTest/MAP_MinigameRewardTest.umap",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/BoardSystem/UI/WBP_PathChoicePrompt.uasset",
+				"C:/Group Project/LayzeeGames/FriendsNotIncluded/Content/Campbell/BoardSystem/UI/WBP_VictoryScreen.uasset"
 			]
 		}
 	]
