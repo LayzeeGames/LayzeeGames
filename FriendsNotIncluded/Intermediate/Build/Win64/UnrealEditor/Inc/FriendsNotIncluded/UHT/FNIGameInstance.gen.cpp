@@ -127,12 +127,76 @@ DEFINE_FUNCTION(UFNIGameInstance::execAwardFragment)
 }
 // ********** End Class UFNIGameInstance Function AwardFragment ************************************
 
+// ********** Begin Class UFNIGameInstance Function SetPlayerBoardSpace ****************************
+struct Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics
+{
+	struct FNIGameInstance_eventSetPlayerBoardSpace_Parms
+	{
+		int32 PlayerSlot;
+		int32 BoardSpaceID;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Board Progress" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Saves the board space the player is currently standing on, returns false if player slot or board space ID is invalid\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Saves the board space the player is currently standing on, returns false if player slot or board space ID is invalid" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerSlot;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_BoardSpaceID;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::NewProp_PlayerSlot = { "PlayerSlot", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventSetPlayerBoardSpace_Parms, PlayerSlot), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::NewProp_BoardSpaceID = { "BoardSpaceID", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventSetPlayerBoardSpace_Parms, BoardSpaceID), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((FNIGameInstance_eventSetPlayerBoardSpace_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FNIGameInstance_eventSetPlayerBoardSpace_Parms), &Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::NewProp_PlayerSlot,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::NewProp_BoardSpaceID,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UFNIGameInstance, nullptr, "SetPlayerBoardSpace", Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::PropPointers), sizeof(Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::FNIGameInstance_eventSetPlayerBoardSpace_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::Function_MetaDataParams), Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::FNIGameInstance_eventSetPlayerBoardSpace_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UFNIGameInstance::execSetPlayerBoardSpace)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_PlayerSlot);
+	P_GET_PROPERTY(FIntProperty,Z_Param_BoardSpaceID);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->SetPlayerBoardSpace(Z_Param_PlayerSlot,Z_Param_BoardSpaceID);
+	P_NATIVE_END;
+}
+// ********** End Class UFNIGameInstance Function SetPlayerBoardSpace ******************************
+
 // ********** Begin Class UFNIGameInstance *********************************************************
 void UFNIGameInstance::StaticRegisterNativesUFNIGameInstance()
 {
 	UClass* Class = UFNIGameInstance::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "AwardFragment", &UFNIGameInstance::execAwardFragment },
+		{ "SetPlayerBoardSpace", &UFNIGameInstance::execSetPlayerBoardSpace },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -225,6 +289,16 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 		{ "ToolTip", "bluepritns can listen to this event when a player wins" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerBoardSpaceIDs_MetaData[] = {
+		{ "Category", "Board Progress" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Stores the board space IDs that each player is currently standing on. Index 0 = Player 1, Index 1 = Player 2, etc. -1 means players board position hasnt been set yet\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Stores the board space IDs that each player is currently standing on. Index 0 = Player 1, Index 1 = Player 2, etc. -1 means players board position hasnt been set yet" },
+#endif
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerFragments_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_PlayerFragments;
@@ -233,10 +307,13 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bGameOver;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_WinningPlayerSlot;
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnPhilosophersStoneCompleted;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerBoardSpaceIDs_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_PlayerBoardSpaceIDs;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_UFNIGameInstance_AwardFragment, "AwardFragment" }, // 2467096573
+		{ &Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace, "SetPlayerBoardSpace" }, // 537122788
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -254,6 +331,8 @@ void Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bGameOver_SetBit(void*
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bGameOver = { "bGameOver", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UFNIGameInstance), &Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bGameOver_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bGameOver_MetaData), NewProp_bGameOver_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_WinningPlayerSlot = { "WinningPlayerSlot", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, WinningPlayerSlot), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WinningPlayerSlot_MetaData), NewProp_WinningPlayerSlot_MetaData) };
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_OnPhilosophersStoneCompleted = { "OnPhilosophersStoneCompleted", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, OnPhilosophersStoneCompleted), Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnPhilosophersStoneCompleted_MetaData), NewProp_OnPhilosophersStoneCompleted_MetaData) }; // 2519598863
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs_Inner = { "PlayerBoardSpaceIDs", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs = { "PlayerBoardSpaceIDs", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, PlayerBoardSpaceIDs), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerBoardSpaceIDs_MetaData), NewProp_PlayerBoardSpaceIDs_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFNIGameInstance_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerFragments_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerFragments,
@@ -261,6 +340,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFNIGameI
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bGameOver,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_WinningPlayerSlot,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_OnPhilosophersStoneCompleted,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UFNIGameInstance_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UFNIGameInstance_Statics::DependentSingletons[])() = {
@@ -300,10 +381,10 @@ UFNIGameInstance::~UFNIGameInstance() {}
 struct Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 1929385222U) },
+		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 1420312793U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_469071136(TEXT("/Script/FriendsNotIncluded"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_1041176460(TEXT("/Script/FriendsNotIncluded"),
 	Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

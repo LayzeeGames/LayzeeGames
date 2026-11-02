@@ -12,6 +12,9 @@ void UFNIGameInstance::Init()
     // Create 4 player slots and give every player 0 fragments
     PlayerFragments.Init(0, 4);
 
+	// Create 4 player slots for their board positions. -1 means that we havent recorded their current space yet
+	PlayerBoardSpaceIDs.Init(-1, 4); 
+
     // A new game has started, so nobody has won yet
     bGameOver = false;
     WinningPlayerSlot = -1;
@@ -52,5 +55,27 @@ bool UFNIGameInstance::AwardFragment(int32 PlayerSlot)
     }
 
     // Fragment awarded successfully
+    return true;
+}
+
+
+bool UFNIGameInstance::SetPlayerBoardSpace(int32 PlayerSlot, int32 BoardSpaceID)
+{
+    // Check that the player slot exists in our array
+    if (!PlayerBoardSpaceIDs.IsValidIndex(PlayerSlot))
+    {
+        return false;
+    }
+
+    // Baord space IDs start at 1, so reject any invalid board space IDs
+    if (BoardSpaceID < 1)
+    {
+        return false;
+    }
+
+    // Save the players current board space ID
+    PlayerBoardSpaceIDs[PlayerSlot] = BoardSpaceID;
+
+    //The players position was successfully saved
     return true;
 }

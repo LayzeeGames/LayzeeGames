@@ -49,5 +49,13 @@ public:
 	//bluepritns can listen to this event when a player wins
 	UPROPERTY(BlueprintAssignable, Category = "Player Progress")
 	FOnPhilosophersStoneCompleted OnPhilosophersStoneCompleted;
+
+	//Stores the board space IDs that each player is currently standing on. Index 0 = Player 1, Index 1 = Player 2, etc. -1 means players board position hasnt been set yet
+	UPROPERTY(BlueprintReadOnly, Category = "Board Progress")
+	TArray<int32> PlayerBoardSpaceIDs;
+
+	//Saves the board space the player is currently standing on, returns false if player slot or board space ID is invalid
+	UFUNCTION(BlueprintCallable, Category = "Board Progress")
+	bool SetPlayerBoardSpace(int32 PlayerSlot, int32 BoardSpaceID);
 	
 };
