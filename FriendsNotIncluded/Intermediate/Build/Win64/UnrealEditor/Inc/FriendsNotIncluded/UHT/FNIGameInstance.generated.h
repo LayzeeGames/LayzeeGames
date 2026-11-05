@@ -25,6 +25,7 @@ FRIENDSNOTINCLUDED_API void FOnPhilosophersStoneCompleted_DelegateWrapper(const 
 
 // ********** Begin Class UFNIGameInstance *********************************************************
 #define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSaveTurnState); \
 	DECLARE_FUNCTION(execSetPlayerBoardSpace); \
 	DECLARE_FUNCTION(execAwardFragment);
 

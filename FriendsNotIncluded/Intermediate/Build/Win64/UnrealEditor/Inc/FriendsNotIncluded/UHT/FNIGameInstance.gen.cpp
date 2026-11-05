@@ -127,6 +127,85 @@ DEFINE_FUNCTION(UFNIGameInstance::execAwardFragment)
 }
 // ********** End Class UFNIGameInstance Function AwardFragment ************************************
 
+// ********** Begin Class UFNIGameInstance Function SaveTurnState **********************************
+struct Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics
+{
+	struct FNIGameInstance_eventSaveTurnState_Parms
+	{
+		TArray<int32> TurnOrder;
+		int32 TurnIndex;
+		int32 CurrentPlayerSlot;
+		int32 RoundNumber;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Turn Progress" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Saves current turn information before changing level, this allows us to continue the same match after a minigame\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Saves current turn information before changing level, this allows us to continue the same match after a minigame" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TurnOrder_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_TurnOrder_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_TurnOrder;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_TurnIndex;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentPlayerSlot;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_RoundNumber;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_TurnOrder_Inner = { "TurnOrder", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_TurnOrder = { "TurnOrder", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventSaveTurnState_Parms, TurnOrder), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TurnOrder_MetaData), NewProp_TurnOrder_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_TurnIndex = { "TurnIndex", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventSaveTurnState_Parms, TurnIndex), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_CurrentPlayerSlot = { "CurrentPlayerSlot", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventSaveTurnState_Parms, CurrentPlayerSlot), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_RoundNumber = { "RoundNumber", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventSaveTurnState_Parms, RoundNumber), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((FNIGameInstance_eventSaveTurnState_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FNIGameInstance_eventSaveTurnState_Parms), &Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_TurnOrder_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_TurnOrder,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_TurnIndex,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_CurrentPlayerSlot,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_RoundNumber,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UFNIGameInstance, nullptr, "SaveTurnState", Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::PropPointers), sizeof(Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::FNIGameInstance_eventSaveTurnState_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::Function_MetaDataParams), Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::FNIGameInstance_eventSaveTurnState_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UFNIGameInstance_SaveTurnState()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UFNIGameInstance::execSaveTurnState)
+{
+	P_GET_TARRAY_REF(int32,Z_Param_Out_TurnOrder);
+	P_GET_PROPERTY(FIntProperty,Z_Param_TurnIndex);
+	P_GET_PROPERTY(FIntProperty,Z_Param_CurrentPlayerSlot);
+	P_GET_PROPERTY(FIntProperty,Z_Param_RoundNumber);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->SaveTurnState(Z_Param_Out_TurnOrder,Z_Param_TurnIndex,Z_Param_CurrentPlayerSlot,Z_Param_RoundNumber);
+	P_NATIVE_END;
+}
+// ********** End Class UFNIGameInstance Function SaveTurnState ************************************
+
 // ********** Begin Class UFNIGameInstance Function SetPlayerBoardSpace ****************************
 struct Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics
 {
@@ -196,6 +275,7 @@ void UFNIGameInstance::StaticRegisterNativesUFNIGameInstance()
 	UClass* Class = UFNIGameInstance::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "AwardFragment", &UFNIGameInstance::execAwardFragment },
+		{ "SaveTurnState", &UFNIGameInstance::execSaveTurnState },
 		{ "SetPlayerBoardSpace", &UFNIGameInstance::execSetPlayerBoardSpace },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -299,6 +379,56 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 		{ "ToolTip", "Stores the board space IDs that each player is currently standing on. Index 0 = Player 1, Index 1 = Player 2, etc. -1 means players board position hasnt been set yet" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SavedTurnOrder_MetaData[] = {
+		{ "Category", "Turn Progress" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Stores the order of players turns, {1, 0} means player 2 goes first then player 1, {0, 1} means player 1 goes first then player 2, etc\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Stores the order of players turns, {1, 0} means player 2 goes first then player 1, {0, 1} means player 1 goes first then player 2, etc" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SavedTurnIndex_MetaData[] = {
+		{ "Category", "Turn Progress" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Stores which position in the turn order that is currently taking their turn, -1 means no turn position has been saved yet\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Stores which position in the turn order that is currently taking their turn, -1 means no turn position has been saved yet" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SavedCurrentPlayerSlot_MetaData[] = {
+		{ "Category", "Turn Progress" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Stores the player slot of the current player taking their turn, -1 means no turn position has been saved yet\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Stores the player slot of the current player taking their turn, -1 means no turn position has been saved yet" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SavedRoundNumber_MetaData[] = {
+		{ "Category", "Turn Progress" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Stores the current round during the game\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Stores the current round during the game" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bHasSavedTurnState_MetaData[] = {
+		{ "Category", "Turn Progress" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//True when we have saved a valid turn state, also tells us that opening rolls have been completed\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "True when we have saved a valid turn state, also tells us that opening rolls have been completed" },
+#endif
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerFragments_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_PlayerFragments;
@@ -309,10 +439,18 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnPhilosophersStoneCompleted;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerBoardSpaceIDs_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_PlayerBoardSpaceIDs;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_SavedTurnOrder_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_SavedTurnOrder;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_SavedTurnIndex;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_SavedCurrentPlayerSlot;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_SavedRoundNumber;
+	static void NewProp_bHasSavedTurnState_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bHasSavedTurnState;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_UFNIGameInstance_AwardFragment, "AwardFragment" }, // 2467096573
+		{ &Z_Construct_UFunction_UFNIGameInstance_SaveTurnState, "SaveTurnState" }, // 3087460839
 		{ &Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace, "SetPlayerBoardSpace" }, // 537122788
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -333,6 +471,16 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_OnPhilosophersStoneCompleted = { "OnPhilosophersStoneCompleted", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, OnPhilosophersStoneCompleted), Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnPhilosophersStoneCompleted_MetaData), NewProp_OnPhilosophersStoneCompleted_MetaData) }; // 2519598863
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs_Inner = { "PlayerBoardSpaceIDs", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs = { "PlayerBoardSpaceIDs", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, PlayerBoardSpaceIDs), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerBoardSpaceIDs_MetaData), NewProp_PlayerBoardSpaceIDs_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnOrder_Inner = { "SavedTurnOrder", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnOrder = { "SavedTurnOrder", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, SavedTurnOrder), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SavedTurnOrder_MetaData), NewProp_SavedTurnOrder_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnIndex = { "SavedTurnIndex", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, SavedTurnIndex), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SavedTurnIndex_MetaData), NewProp_SavedTurnIndex_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedCurrentPlayerSlot = { "SavedCurrentPlayerSlot", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, SavedCurrentPlayerSlot), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SavedCurrentPlayerSlot_MetaData), NewProp_SavedCurrentPlayerSlot_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedRoundNumber = { "SavedRoundNumber", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, SavedRoundNumber), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SavedRoundNumber_MetaData), NewProp_SavedRoundNumber_MetaData) };
+void Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bHasSavedTurnState_SetBit(void* Obj)
+{
+	((UFNIGameInstance*)Obj)->bHasSavedTurnState = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bHasSavedTurnState = { "bHasSavedTurnState", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UFNIGameInstance), &Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bHasSavedTurnState_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bHasSavedTurnState_MetaData), NewProp_bHasSavedTurnState_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFNIGameInstance_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerFragments_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerFragments,
@@ -342,6 +490,12 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFNIGameI
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_OnPhilosophersStoneCompleted,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnOrder_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnOrder,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnIndex,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedCurrentPlayerSlot,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedRoundNumber,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bHasSavedTurnState,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UFNIGameInstance_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UFNIGameInstance_Statics::DependentSingletons[])() = {
@@ -381,10 +535,10 @@ UFNIGameInstance::~UFNIGameInstance() {}
 struct Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 1420312793U) },
+		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 2937350534U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_1041176460(TEXT("/Script/FriendsNotIncluded"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_3626417565(TEXT("/Script/FriendsNotIncluded"),
 	Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

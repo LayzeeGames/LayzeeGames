@@ -18,6 +18,19 @@ void UFNIGameInstance::Init()
     // A new game has started, so nobody has won yet
     bGameOver = false;
     WinningPlayerSlot = -1;
+
+    //Clear any saved turn order
+	SavedTurnOrder.Empty();
+
+	//No player turns have been saved yet
+	SavedTurnIndex = -1;
+	SavedCurrentPlayerSlot = -1;
+
+    //The board hasnt started first round yet
+	SavedRoundNumber = -1;
+
+	//Opening dice and turn information hasnt been saved yet
+	bHasSavedTurnState = false;
 }
 
 bool UFNIGameInstance::AwardFragment(int32 PlayerSlot)
@@ -79,3 +92,63 @@ bool UFNIGameInstance::SetPlayerBoardSpace(int32 PlayerSlot, int32 BoardSpaceID)
     //The players position was successfully saved
     return true;
 }
+
+
+bool UFNIGameInstance::SaveTurnState(const TArray<int32>& TurnOrder, int32 TurnIndex, int32 CurrentPlayerSlot, int32 RoundNumber)
+{
+    // Support for 2 to 4 players
+    if (TurnOrder.Num() < 2 || TurnOrder.Num() > 4)
+    {
+        return false;
+    }
+
+    // Make sure the turn index exists in the turn order
+    if (!TurnOrder.IsValidIndex(TurnIndex))
+    {
+        return false;
+    }
+
+    // Make sure the current player exists
+    if (!PlayerFragments.IsValidIndex(CurrentPlayerSlot))
+    {
+        return false;
+    }
+
+    // The current player should match their position in the turn order
+    if (TurnOrder[TurnIndex] != CurrentPlayerSlot)
+    {
+        return false;
+    }
+
+    //Reject an invalid round number
+    if (RoundNumber < 0)
+    {
+        return false;
+    }
+
+    // Check that the turn order contains valid, unique player slots
+    TArray<int32> CheckedPlayers;
+
+    for (int32 PlayerSlot : TurnOrder)
+    {
+        if (!PlayerFragments.IsValidIndex(PlayerSlot) ||
+            CheckedPlayers.Contains(PlayerSlot))
+        {
+            return false;
+        }
+
+        CheckedPlayers.Add(PlayerSlot);
+    }
+
+    // All checks passed, so save the current match information
+    SavedTurnOrder = TurnOrder;
+    SavedTurnIndex = TurnIndex;
+    SavedCurrentPlayerSlot = CurrentPlayerSlot;
+    SavedRoundNumber = RoundNumber;
+
+    //Tell the game that a saved turn state is available
+    bHasSavedTurnState = true;
+
+    return true;
+}
+

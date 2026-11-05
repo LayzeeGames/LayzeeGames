@@ -57,5 +57,29 @@ public:
 	//Saves the board space the player is currently standing on, returns false if player slot or board space ID is invalid
 	UFUNCTION(BlueprintCallable, Category = "Board Progress")
 	bool SetPlayerBoardSpace(int32 PlayerSlot, int32 BoardSpaceID);
-	
+
+	//Saves current turn information before changing level, this allows us to continue the same match after a minigame
+	UFUNCTION(BlueprintCallable, Category = "Turn Progress")
+	bool SaveTurnState(const TArray<int32>& TurnOrder, int32 TurnIndex, int32 CurrentPlayerSlot, int32 RoundNumber);
+
+	//Stores the order of players turns, {1, 0} means player 2 goes first then player 1, {0, 1} means player 1 goes first then player 2, etc
+	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
+	TArray<int32> SavedTurnOrder;
+
+	//Stores which position in the turn order that is currently taking their turn, -1 means no turn position has been saved yet
+	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
+	int32 SavedTurnIndex = -1;
+
+	//Stores the player slot of the current player taking their turn, -1 means no turn position has been saved yet
+	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
+	int32 SavedCurrentPlayerSlot = -1;
+
+	//Stores the current round during the game
+	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
+	int32 SavedRoundNumber = -1;
+
+	//True when we have saved a valid turn state, also tells us that opening rolls have been completed
+	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
+	bool bHasSavedTurnState = false;
+
 };
