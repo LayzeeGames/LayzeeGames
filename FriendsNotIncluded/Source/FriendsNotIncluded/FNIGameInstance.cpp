@@ -12,6 +12,10 @@ void UFNIGameInstance::Init()
     // Create 4 player slots and give every player 0 fragments
     PlayerFragments.Init(0, 4);
 
+
+    // Create 4 player slots and give everyone 0 coins at the start of the game
+    PlayerCoins.Init(0, 4);
+
 	// Create 4 player slots for their board positions. -1 means that we havent recorded their current space yet
 	PlayerBoardSpaceIDs.Init(-1, 4); 
 
@@ -149,6 +153,78 @@ bool UFNIGameInstance::SaveTurnState(const TArray<int32>& TurnOrder, int32 TurnI
     //Tell the game that a saved turn state is available
     bHasSavedTurnState = true;
 
+    return true;
+}
+
+
+bool UFNIGameInstance::AddCoins(int32 PlayerSlot, int32 Amount)
+{
+    // Check that the player slot exists in our array
+    if (!PlayerCoins.IsValidIndex(PlayerSlot))
+    {
+        return false;
+    }
+
+    // Only allow positive amounts of coins to be added
+    if (Amount <= 0)
+    {
+        return false;
+    }
+
+    // Add the coins to the selected players balance
+    PlayerCoins[PlayerSlot] += Amount;
+
+    // Coins were successfully added
+    return true;
+}
+
+
+bool UFNIGameInstance::TrySpendCoins(int32 PlayerSlot, int32 Amount)
+{
+    // Check that the player slot exists in our array
+    if (!PlayerCoins.IsValidIndex(PlayerSlot))
+    {
+        return false;
+    }
+
+    // Only allow positive amounts to be spent
+    if (Amount <= 0)
+    {
+        return false;
+    }
+
+    // Check if the player has enough coins to afford the purchase
+    if (PlayerCoins[PlayerSlot] < Amount)
+    {
+        return false;
+    }
+
+    // Take the coins away from the selected player's balance
+    PlayerCoins[PlayerSlot] -= Amount;
+
+    // The player successfully spent their coins
+    return true;
+}
+
+
+bool UFNIGameInstance::RemoveCoins(int32 PlayerSlot, int32 Amount)
+{
+    // Check that the player slot exists in our array
+    if (!PlayerCoins.IsValidIndex(PlayerSlot))
+    {
+        return false;
+    }
+
+    // Only allow positive amounts to be removed
+    if (Amount <= 0)
+    {
+        return false;
+    }
+
+    // Remove coins without letting the balance drop below 0
+    PlayerCoins[PlayerSlot] = FMath::Max(0, PlayerCoins[PlayerSlot] - Amount);
+
+    // Coins were successfully processed
     return true;
 }
 

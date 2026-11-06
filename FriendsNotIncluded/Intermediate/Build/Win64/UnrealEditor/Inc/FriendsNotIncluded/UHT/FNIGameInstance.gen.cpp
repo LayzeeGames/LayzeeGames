@@ -69,6 +69,69 @@ void FOnPhilosophersStoneCompleted_DelegateWrapper(const FMulticastScriptDelegat
 }
 // ********** End Delegate FOnPhilosophersStoneCompleted *******************************************
 
+// ********** Begin Class UFNIGameInstance Function AddCoins ***************************************
+struct Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics
+{
+	struct FNIGameInstance_eventAddCoins_Parms
+	{
+		int32 PlayerSlot;
+		int32 Amount;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Player Coins" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Adds coins to a player, returns false if the player or amount is invalid\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Adds coins to a player, returns false if the player or amount is invalid" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerSlot;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Amount;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::NewProp_PlayerSlot = { "PlayerSlot", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventAddCoins_Parms, PlayerSlot), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventAddCoins_Parms, Amount), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((FNIGameInstance_eventAddCoins_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FNIGameInstance_eventAddCoins_Parms), &Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::NewProp_PlayerSlot,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::NewProp_Amount,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UFNIGameInstance, nullptr, "AddCoins", Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::PropPointers), sizeof(Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::FNIGameInstance_eventAddCoins_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::Function_MetaDataParams), Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::FNIGameInstance_eventAddCoins_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UFNIGameInstance_AddCoins()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UFNIGameInstance_AddCoins_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UFNIGameInstance::execAddCoins)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_PlayerSlot);
+	P_GET_PROPERTY(FIntProperty,Z_Param_Amount);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->AddCoins(Z_Param_PlayerSlot,Z_Param_Amount);
+	P_NATIVE_END;
+}
+// ********** End Class UFNIGameInstance Function AddCoins *****************************************
+
 // ********** Begin Class UFNIGameInstance Function AwardFragment **********************************
 struct Z_Construct_UFunction_UFNIGameInstance_AwardFragment_Statics
 {
@@ -126,6 +189,69 @@ DEFINE_FUNCTION(UFNIGameInstance::execAwardFragment)
 	P_NATIVE_END;
 }
 // ********** End Class UFNIGameInstance Function AwardFragment ************************************
+
+// ********** Begin Class UFNIGameInstance Function RemoveCoins ************************************
+struct Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics
+{
+	struct FNIGameInstance_eventRemoveCoins_Parms
+	{
+		int32 PlayerSlot;
+		int32 Amount;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Player Coins" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Removes coins from a player, their balance cannot go below 0\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Removes coins from a player, their balance cannot go below 0" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerSlot;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Amount;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::NewProp_PlayerSlot = { "PlayerSlot", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventRemoveCoins_Parms, PlayerSlot), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventRemoveCoins_Parms, Amount), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((FNIGameInstance_eventRemoveCoins_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FNIGameInstance_eventRemoveCoins_Parms), &Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::NewProp_PlayerSlot,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::NewProp_Amount,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UFNIGameInstance, nullptr, "RemoveCoins", Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::PropPointers), sizeof(Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::FNIGameInstance_eventRemoveCoins_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::Function_MetaDataParams), Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::FNIGameInstance_eventRemoveCoins_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UFNIGameInstance_RemoveCoins()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UFNIGameInstance::execRemoveCoins)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_PlayerSlot);
+	P_GET_PROPERTY(FIntProperty,Z_Param_Amount);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->RemoveCoins(Z_Param_PlayerSlot,Z_Param_Amount);
+	P_NATIVE_END;
+}
+// ********** End Class UFNIGameInstance Function RemoveCoins **************************************
 
 // ********** Begin Class UFNIGameInstance Function SaveTurnState **********************************
 struct Z_Construct_UFunction_UFNIGameInstance_SaveTurnState_Statics
@@ -269,14 +395,80 @@ DEFINE_FUNCTION(UFNIGameInstance::execSetPlayerBoardSpace)
 }
 // ********** End Class UFNIGameInstance Function SetPlayerBoardSpace ******************************
 
+// ********** Begin Class UFNIGameInstance Function TrySpendCoins **********************************
+struct Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics
+{
+	struct FNIGameInstance_eventTrySpendCoins_Parms
+	{
+		int32 PlayerSlot;
+		int32 Amount;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Player Coins" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Attempts to spend a players coins, returns false if they can't afford it or the inputs are invalid\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Attempts to spend a players coins, returns false if they can't afford it or the inputs are invalid" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerSlot;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Amount;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::NewProp_PlayerSlot = { "PlayerSlot", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventTrySpendCoins_Parms, PlayerSlot), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::NewProp_Amount = { "Amount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventTrySpendCoins_Parms, Amount), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((FNIGameInstance_eventTrySpendCoins_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FNIGameInstance_eventTrySpendCoins_Parms), &Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::NewProp_PlayerSlot,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::NewProp_Amount,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UFNIGameInstance, nullptr, "TrySpendCoins", Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::PropPointers), sizeof(Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::FNIGameInstance_eventTrySpendCoins_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::Function_MetaDataParams), Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::FNIGameInstance_eventTrySpendCoins_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UFNIGameInstance::execTrySpendCoins)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_PlayerSlot);
+	P_GET_PROPERTY(FIntProperty,Z_Param_Amount);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->TrySpendCoins(Z_Param_PlayerSlot,Z_Param_Amount);
+	P_NATIVE_END;
+}
+// ********** End Class UFNIGameInstance Function TrySpendCoins ************************************
+
 // ********** Begin Class UFNIGameInstance *********************************************************
 void UFNIGameInstance::StaticRegisterNativesUFNIGameInstance()
 {
 	UClass* Class = UFNIGameInstance::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "AddCoins", &UFNIGameInstance::execAddCoins },
 		{ "AwardFragment", &UFNIGameInstance::execAwardFragment },
+		{ "RemoveCoins", &UFNIGameInstance::execRemoveCoins },
 		{ "SaveTurnState", &UFNIGameInstance::execSaveTurnState },
 		{ "SetPlayerBoardSpace", &UFNIGameInstance::execSetPlayerBoardSpace },
+		{ "TrySpendCoins", &UFNIGameInstance::execTrySpendCoins },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -318,6 +510,16 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 #endif
 		{ "IncludePath", "FNIGameInstance.h" },
 		{ "ModuleRelativePath", "FNIGameInstance.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerCoins_MetaData[] = {
+		{ "Category", "Player Coins" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Stores how many coins each player has, each index represents a player slot\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Stores how many coins each player has, each index represents a player slot" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerFragments_MetaData[] = {
 		{ "Category", "Player Progress" },
@@ -430,6 +632,8 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 #endif
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerCoins_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_PlayerCoins;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerFragments_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_PlayerFragments;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_FragmentsRequiredToWin;
@@ -449,9 +653,12 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_UFNIGameInstance_AddCoins, "AddCoins" }, // 1590471926
 		{ &Z_Construct_UFunction_UFNIGameInstance_AwardFragment, "AwardFragment" }, // 2467096573
+		{ &Z_Construct_UFunction_UFNIGameInstance_RemoveCoins, "RemoveCoins" }, // 1592689225
 		{ &Z_Construct_UFunction_UFNIGameInstance_SaveTurnState, "SaveTurnState" }, // 3087460839
 		{ &Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace, "SetPlayerBoardSpace" }, // 537122788
+		{ &Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins, "TrySpendCoins" }, // 2391744562
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -459,6 +666,8 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerCoins_Inner = { "PlayerCoins", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerCoins = { "PlayerCoins", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, PlayerCoins), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerCoins_MetaData), NewProp_PlayerCoins_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerFragments_Inner = { "PlayerFragments", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerFragments = { "PlayerFragments", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, PlayerFragments), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerFragments_MetaData), NewProp_PlayerFragments_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_FragmentsRequiredToWin = { "FragmentsRequiredToWin", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, FragmentsRequiredToWin), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FragmentsRequiredToWin_MetaData), NewProp_FragmentsRequiredToWin_MetaData) };
@@ -482,6 +691,8 @@ void Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bHasSavedTurnState_Set
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bHasSavedTurnState = { "bHasSavedTurnState", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UFNIGameInstance), &Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_bHasSavedTurnState_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bHasSavedTurnState_MetaData), NewProp_bHasSavedTurnState_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFNIGameInstance_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerCoins_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerCoins,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerFragments_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerFragments,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_FragmentsRequiredToWin,
@@ -535,10 +746,10 @@ UFNIGameInstance::~UFNIGameInstance() {}
 struct Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 2937350534U) },
+		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 2059370824U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_3626417565(TEXT("/Script/FriendsNotIncluded"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_1913924919(TEXT("/Script/FriendsNotIncluded"),
 	Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

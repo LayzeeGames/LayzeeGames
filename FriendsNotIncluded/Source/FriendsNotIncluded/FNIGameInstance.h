@@ -23,6 +23,23 @@ class FRIENDSNOTINCLUDED_API UFNIGameInstance : public UGameInstance
 
 public:
 
+
+	// Stores how many coins each player has, each index represents a player slot
+	UPROPERTY(BlueprintReadOnly, Category = "Player Coins")
+	TArray<int32> PlayerCoins;
+
+	// Adds coins to a player, returns false if the player or amount is invalid
+	UFUNCTION(BlueprintCallable, Category = "Player Coins")
+	bool AddCoins(int32 PlayerSlot, int32 Amount);
+
+	// Attempts to spend a players coins, returns false if they can't afford it or the inputs are invalid
+	UFUNCTION(BlueprintCallable, Category = "Player Coins")
+	bool TrySpendCoins(int32 PlayerSlot, int32 Amount);
+
+	// Removes coins from a player, their balance cannot go below 0
+	UFUNCTION(BlueprintCallable, Category = "Player Coins")
+	bool RemoveCoins(int32 PlayerSlot, int32 Amount);
+
 	// Stores how many Philosopher's Stone fragments each player owns, TArray<int32> works kinda like List<int>
 	UPROPERTY(BlueprintReadOnly, Category = "Player Progress")
 	TArray<int32> PlayerFragments;
