@@ -75,6 +75,18 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Board Progress")
 	bool SetPlayerBoardSpace(int32 PlayerSlot, int32 BoardSpaceID);
 
+	//Stores the board space that has the current fragment on it, -1 means no fragment on the board
+	UPROPERTY(BlueprintReadOnly, Category = "Board Fragment")
+	int32 BoardFragmentSpaceID = -1;
+
+	// Saves the board space that has the current fragment on it, returns false if board space ID is invalid or a fragment alreasy exists
+	UFUNCTION(BlueprintCallable, Category = "Board Fragment")
+	bool SetBoardFragmentSpace(int32 SpaceID);
+
+	// Clears the saved board fragment when it has been collected, will only return true if the correct fragment was found
+	UFUNCTION(BlueprintCallable, Category = "Board Fragment")
+	bool ClearBoardFragmentSpace(int32 SpaceID);
+
 	//Saves current turn information before changing level, this allows us to continue the same match after a minigame
 	UFUNCTION(BlueprintCallable, Category = "Turn Progress")
 	bool SaveTurnState(const TArray<int32>& TurnOrder, int32 TurnIndex, int32 CurrentPlayerSlot, int32 RoundNumber);

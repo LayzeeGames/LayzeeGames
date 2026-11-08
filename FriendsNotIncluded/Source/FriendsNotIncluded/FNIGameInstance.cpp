@@ -19,6 +19,9 @@ void UFNIGameInstance::Init()
 	// Create 4 player slots for their board positions. -1 means that we havent recorded their current space yet
 	PlayerBoardSpaceIDs.Init(-1, 4); 
 
+    // No board fragment exists when a new game session begins
+    BoardFragmentSpaceID = -1;
+
     // A new game has started, so nobody has won yet
     bGameOver = false;
     WinningPlayerSlot = -1;
@@ -225,6 +228,40 @@ bool UFNIGameInstance::RemoveCoins(int32 PlayerSlot, int32 Amount)
     PlayerCoins[PlayerSlot] = FMath::Max(0, PlayerCoins[PlayerSlot] - Amount);
 
     // Coins were successfully processed
+    return true;
+}
+
+bool UFNIGameInstance::SetBoardFragmentSpace(int32 SpaceID)
+{
+    // Board space IDs start from 1, so reject invalid values
+    if (SpaceID < 1)
+    {
+        return false;
+    }
+
+    // Only one fragment can exist on the board at a time
+    if (BoardFragmentSpaceID != -1)
+    {
+        return false;
+    }
+
+    // Save the space containing our new fragment
+    BoardFragmentSpaceID = SpaceID;
+
+    return true;
+}
+
+bool UFNIGameInstance::ClearBoardFragmentSpace(int32 SpaceID)
+{
+    //Make sure the fragment we are removing matches the one the one currently saved
+    if (BoardFragmentSpaceID != SpaceID || BoardFragmentSpaceID == -1)
+    {
+        return false;
+    }
+
+    // -1 means there is no active fragment on the board
+    BoardFragmentSpaceID = -1;
+
     return true;
 }
 
