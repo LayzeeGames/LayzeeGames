@@ -23,6 +23,23 @@ class FRIENDSNOTINCLUDED_API UFNIGameInstance : public UGameInstance
 
 public:
 
+
+	// Stores how many coins each player has, each index represents a player slot
+	UPROPERTY(BlueprintReadOnly, Category = "Player Coins")
+	TArray<int32> PlayerCoins;
+
+	// Adds coins to a player, returns false if the player or amount is invalid
+	UFUNCTION(BlueprintCallable, Category = "Player Coins")
+	bool AddCoins(int32 PlayerSlot, int32 Amount);
+
+	// Attempts to spend a players coins, returns false if they can't afford it or the inputs are invalid
+	UFUNCTION(BlueprintCallable, Category = "Player Coins")
+	bool TrySpendCoins(int32 PlayerSlot, int32 Amount);
+
+	// Removes coins from a player, their balance cannot go below 0
+	UFUNCTION(BlueprintCallable, Category = "Player Coins")
+	bool RemoveCoins(int32 PlayerSlot, int32 Amount);
+
 	// Stores how many Philosopher's Stone fragments each player owns, TArray<int32> works kinda like List<int>
 	UPROPERTY(BlueprintReadOnly, Category = "Player Progress")
 	TArray<int32> PlayerFragments;
@@ -49,5 +66,49 @@ public:
 	//bluepritns can listen to this event when a player wins
 	UPROPERTY(BlueprintAssignable, Category = "Player Progress")
 	FOnPhilosophersStoneCompleted OnPhilosophersStoneCompleted;
-	
+
+	//Stores the board space IDs that each player is currently standing on. Index 0 = Player 1, Index 1 = Player 2, etc. -1 means players board position hasnt been set yet
+	UPROPERTY(BlueprintReadOnly, Category = "Board Progress")
+	TArray<int32> PlayerBoardSpaceIDs;
+
+	//Saves the board space the player is currently standing on, returns false if player slot or board space ID is invalid
+	UFUNCTION(BlueprintCallable, Category = "Board Progress")
+	bool SetPlayerBoardSpace(int32 PlayerSlot, int32 BoardSpaceID);
+
+	//Stores the board space that has the current fragment on it, -1 means no fragment on the board
+	UPROPERTY(BlueprintReadOnly, Category = "Board Fragment")
+	int32 BoardFragmentSpaceID = -1;
+
+	// Saves the board space that has the current fragment on it, returns false if board space ID is invalid or a fragment alreasy exists
+	UFUNCTION(BlueprintCallable, Category = "Board Fragment")
+	bool SetBoardFragmentSpace(int32 SpaceID);
+
+	// Clears the saved board fragment when it has been collected, will only return true if the correct fragment was found
+	UFUNCTION(BlueprintCallable, Category = "Board Fragment")
+	bool ClearBoardFragmentSpace(int32 SpaceID);
+
+	//Saves current turn information before changing level, this allows us to continue the same match after a minigame
+	UFUNCTION(BlueprintCallable, Category = "Turn Progress")
+	bool SaveTurnState(const TArray<int32>& TurnOrder, int32 TurnIndex, int32 CurrentPlayerSlot, int32 RoundNumber);
+
+	//Stores the order of players turns, {1, 0} means player 2 goes first then player 1, {0, 1} means player 1 goes first then player 2, etc
+	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
+	TArray<int32> SavedTurnOrder;
+
+	//Stores which position in the turn order that is currently taking their turn, -1 means no turn position has been saved yet
+	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
+	int32 SavedTurnIndex = -1;
+
+	//Stores the player slot of the current player taking their turn, -1 means no turn position has been saved yet
+	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
+	int32 SavedCurrentPlayerSlot = -1;
+
+	//Stores the current round during the game
+	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
+	int32 SavedRoundNumber = -1;
+
+	//True when we have saved a valid turn state, also tells us that opening rolls have been completed
+	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
+	bool bHasSavedTurnState = false;
+
 };
