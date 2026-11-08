@@ -190,6 +190,64 @@ DEFINE_FUNCTION(UFNIGameInstance::execAwardFragment)
 }
 // ********** End Class UFNIGameInstance Function AwardFragment ************************************
 
+// ********** Begin Class UFNIGameInstance Function ClearBoardFragmentSpace ************************
+struct Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics
+{
+	struct FNIGameInstance_eventClearBoardFragmentSpace_Parms
+	{
+		int32 SpaceID;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Board Fragment" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Clears the saved board fragment when it has been collected, will only return true if the correct fragment was found\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Clears the saved board fragment when it has been collected, will only return true if the correct fragment was found" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_SpaceID;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::NewProp_SpaceID = { "SpaceID", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventClearBoardFragmentSpace_Parms, SpaceID), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((FNIGameInstance_eventClearBoardFragmentSpace_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FNIGameInstance_eventClearBoardFragmentSpace_Parms), &Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::NewProp_SpaceID,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UFNIGameInstance, nullptr, "ClearBoardFragmentSpace", Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::PropPointers), sizeof(Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::FNIGameInstance_eventClearBoardFragmentSpace_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::Function_MetaDataParams), Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::FNIGameInstance_eventClearBoardFragmentSpace_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UFNIGameInstance::execClearBoardFragmentSpace)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_SpaceID);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->ClearBoardFragmentSpace(Z_Param_SpaceID);
+	P_NATIVE_END;
+}
+// ********** End Class UFNIGameInstance Function ClearBoardFragmentSpace **************************
+
 // ********** Begin Class UFNIGameInstance Function RemoveCoins ************************************
 struct Z_Construct_UFunction_UFNIGameInstance_RemoveCoins_Statics
 {
@@ -332,6 +390,64 @@ DEFINE_FUNCTION(UFNIGameInstance::execSaveTurnState)
 }
 // ********** End Class UFNIGameInstance Function SaveTurnState ************************************
 
+// ********** Begin Class UFNIGameInstance Function SetBoardFragmentSpace **************************
+struct Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics
+{
+	struct FNIGameInstance_eventSetBoardFragmentSpace_Parms
+	{
+		int32 SpaceID;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Board Fragment" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Saves the board space that has the current fragment on it, returns false if board space ID is invalid or a fragment alreasy exists\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Saves the board space that has the current fragment on it, returns false if board space ID is invalid or a fragment alreasy exists" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_SpaceID;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::NewProp_SpaceID = { "SpaceID", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIGameInstance_eventSetBoardFragmentSpace_Parms, SpaceID), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((FNIGameInstance_eventSetBoardFragmentSpace_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FNIGameInstance_eventSetBoardFragmentSpace_Parms), &Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::NewProp_SpaceID,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UFNIGameInstance, nullptr, "SetBoardFragmentSpace", Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::PropPointers), sizeof(Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::FNIGameInstance_eventSetBoardFragmentSpace_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::Function_MetaDataParams), Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::FNIGameInstance_eventSetBoardFragmentSpace_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UFNIGameInstance::execSetBoardFragmentSpace)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_SpaceID);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->SetBoardFragmentSpace(Z_Param_SpaceID);
+	P_NATIVE_END;
+}
+// ********** End Class UFNIGameInstance Function SetBoardFragmentSpace ****************************
+
 // ********** Begin Class UFNIGameInstance Function SetPlayerBoardSpace ****************************
 struct Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace_Statics
 {
@@ -465,8 +581,10 @@ void UFNIGameInstance::StaticRegisterNativesUFNIGameInstance()
 	static const FNameNativePtrPair Funcs[] = {
 		{ "AddCoins", &UFNIGameInstance::execAddCoins },
 		{ "AwardFragment", &UFNIGameInstance::execAwardFragment },
+		{ "ClearBoardFragmentSpace", &UFNIGameInstance::execClearBoardFragmentSpace },
 		{ "RemoveCoins", &UFNIGameInstance::execRemoveCoins },
 		{ "SaveTurnState", &UFNIGameInstance::execSaveTurnState },
+		{ "SetBoardFragmentSpace", &UFNIGameInstance::execSetBoardFragmentSpace },
 		{ "SetPlayerBoardSpace", &UFNIGameInstance::execSetPlayerBoardSpace },
 		{ "TrySpendCoins", &UFNIGameInstance::execTrySpendCoins },
 	};
@@ -581,6 +699,16 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 		{ "ToolTip", "Stores the board space IDs that each player is currently standing on. Index 0 = Player 1, Index 1 = Player 2, etc. -1 means players board position hasnt been set yet" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BoardFragmentSpaceID_MetaData[] = {
+		{ "Category", "Board Fragment" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Stores the board space that has the current fragment on it, -1 means no fragment on the board\n" },
+#endif
+		{ "ModuleRelativePath", "FNIGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Stores the board space that has the current fragment on it, -1 means no fragment on the board" },
+#endif
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SavedTurnOrder_MetaData[] = {
 		{ "Category", "Turn Progress" },
 #if !UE_BUILD_SHIPPING
@@ -643,6 +771,7 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnPhilosophersStoneCompleted;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerBoardSpaceIDs_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_PlayerBoardSpaceIDs;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_BoardFragmentSpaceID;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_SavedTurnOrder_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_SavedTurnOrder;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_SavedTurnIndex;
@@ -655,8 +784,10 @@ struct Z_Construct_UClass_UFNIGameInstance_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_UFNIGameInstance_AddCoins, "AddCoins" }, // 1590471926
 		{ &Z_Construct_UFunction_UFNIGameInstance_AwardFragment, "AwardFragment" }, // 2467096573
+		{ &Z_Construct_UFunction_UFNIGameInstance_ClearBoardFragmentSpace, "ClearBoardFragmentSpace" }, // 1789333981
 		{ &Z_Construct_UFunction_UFNIGameInstance_RemoveCoins, "RemoveCoins" }, // 1592689225
 		{ &Z_Construct_UFunction_UFNIGameInstance_SaveTurnState, "SaveTurnState" }, // 3087460839
+		{ &Z_Construct_UFunction_UFNIGameInstance_SetBoardFragmentSpace, "SetBoardFragmentSpace" }, // 1836908242
 		{ &Z_Construct_UFunction_UFNIGameInstance_SetPlayerBoardSpace, "SetPlayerBoardSpace" }, // 537122788
 		{ &Z_Construct_UFunction_UFNIGameInstance_TrySpendCoins, "TrySpendCoins" }, // 2391744562
 	};
@@ -680,6 +811,7 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_OnPhilosophersStoneCompleted = { "OnPhilosophersStoneCompleted", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, OnPhilosophersStoneCompleted), Z_Construct_UDelegateFunction_FriendsNotIncluded_OnPhilosophersStoneCompleted__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnPhilosophersStoneCompleted_MetaData), NewProp_OnPhilosophersStoneCompleted_MetaData) }; // 2519598863
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs_Inner = { "PlayerBoardSpaceIDs", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs = { "PlayerBoardSpaceIDs", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, PlayerBoardSpaceIDs), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerBoardSpaceIDs_MetaData), NewProp_PlayerBoardSpaceIDs_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_BoardFragmentSpaceID = { "BoardFragmentSpaceID", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, BoardFragmentSpaceID), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BoardFragmentSpaceID_MetaData), NewProp_BoardFragmentSpaceID_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnOrder_Inner = { "SavedTurnOrder", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnOrder = { "SavedTurnOrder", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, SavedTurnOrder), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SavedTurnOrder_MetaData), NewProp_SavedTurnOrder_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnIndex = { "SavedTurnIndex", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFNIGameInstance, SavedTurnIndex), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SavedTurnIndex_MetaData), NewProp_SavedTurnIndex_MetaData) };
@@ -701,6 +833,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFNIGameI
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_OnPhilosophersStoneCompleted,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_PlayerBoardSpaceIDs,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_BoardFragmentSpaceID,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnOrder_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnOrder,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFNIGameInstance_Statics::NewProp_SavedTurnIndex,
@@ -746,10 +879,10 @@ UFNIGameInstance::~UFNIGameInstance() {}
 struct Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 2059370824U) },
+		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 2636235796U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_1913924919(TEXT("/Script/FriendsNotIncluded"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_516340533(TEXT("/Script/FriendsNotIncluded"),
 	Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
