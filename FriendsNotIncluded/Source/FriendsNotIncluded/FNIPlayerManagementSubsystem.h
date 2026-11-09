@@ -39,6 +39,10 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Player Management")
 	bool HasFreePlayerSlot() const;
 
+	// Creates Unreal Local Player and registers to available slot
+	UFUNCTION(BlueprintCallable, Category = "Player Management")
+	ULocalPlayer* CreateAndRegisterLocalPlayer(int32 ControllerID);
+
 	// Registers a Unreal Local Player
 	int32 RegisterLocalPlayer(ULocalPlayer* InLocalPlayer);
 

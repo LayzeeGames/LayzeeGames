@@ -16,10 +16,12 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
+class ULocalPlayer;
 struct FNIPlayerSlotData;
 
 // ********** Begin Class UFNIPlayerManagementSubsystem ********************************************
 #define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execCreateAndRegisterLocalPlayer); \
 	DECLARE_FUNCTION(execHasFreePlayerSlot); \
 	DECLARE_FUNCTION(execIsPlayerSlotConnected); \
 	DECLARE_FUNCTION(execGetPlayerSlotData);
