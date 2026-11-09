@@ -17,21 +17,27 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Delegate FOnPhilosophersStoneCompleted *****************************************
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_11_DELEGATE \
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_11_DELEGATE \
 FRIENDSNOTINCLUDED_API void FOnPhilosophersStoneCompleted_DelegateWrapper(const FMulticastScriptDelegate& OnPhilosophersStoneCompleted, int32 WinnerSlot);
 
 
 // ********** End Delegate FOnPhilosophersStoneCompleted *******************************************
 
 // ********** Begin Class UFNIGameInstance *********************************************************
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSaveTurnState); \
+	DECLARE_FUNCTION(execClearBoardFragmentSpace); \
+	DECLARE_FUNCTION(execSetBoardFragmentSpace); \
 	DECLARE_FUNCTION(execSetPlayerBoardSpace); \
-	DECLARE_FUNCTION(execAwardFragment);
+	DECLARE_FUNCTION(execAwardFragment); \
+	DECLARE_FUNCTION(execRemoveCoins); \
+	DECLARE_FUNCTION(execTrySpendCoins); \
+	DECLARE_FUNCTION(execAddCoins);
 
 
 FRIENDSNOTINCLUDED_API UClass* Z_Construct_UClass_UFNIGameInstance_NoRegister();
 
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_INCLASS_NO_PURE_DECLS \
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUFNIGameInstance(); \
 	friend struct Z_Construct_UClass_UFNIGameInstance_Statics; \
@@ -42,7 +48,7 @@ public: \
 	DECLARE_SERIALIZER(UFNIGameInstance)
 
 
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_ENHANCED_CONSTRUCTORS \
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UFNIGameInstance(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -54,13 +60,13 @@ public: \
 	NO_API virtual ~UFNIGameInstance();
 
 
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_17_PROLOG
-#define FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_GENERATED_BODY \
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_17_PROLOG
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_INCLASS_NO_PURE_DECLS \
-	FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_ENHANCED_CONSTRUCTORS \
+	FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_INCLASS_NO_PURE_DECLS \
+	FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -70,6 +76,6 @@ class UFNIGameInstance;
 // ********** End Class UFNIGameInstance ***********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h
+#define CURRENT_FILE_ID FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
