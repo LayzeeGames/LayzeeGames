@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FriendsNotIncludedModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58bb40fe84fd65637eb64e5e5e2cc2e71afca1b6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c7946fa5b427ddf093fdbf6fcfac3756291e327")]
 [assembly: System.Reflection.AssemblyProductAttribute("FriendsNotIncludedModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FriendsNotIncludedModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -11,6 +11,7 @@
     <None Include="..\..\Source\FriendsNotIncludedEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -38,6 +39,12 @@
     <ClInclude Include="..\..\Source\FriendsNotIncluded\FNIGameInstance.h">
       <Filter>Source\FriendsNotIncluded</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\FriendsNotIncluded\FNIPlayerManagementSubsystem.cpp">
+      <Filter>Source\FriendsNotIncluded</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FriendsNotIncluded\FNIPlayerManagementSubsystem.h">
+      <Filter>Source\FriendsNotIncluded</Filter>
+    </ClInclude>
     <None Include="..\..\Source\FriendsNotIncluded\FriendsNotIncluded.Build.cs">
       <Filter>Source\FriendsNotIncluded</Filter>
     </None>
@@ -45,6 +52,11 @@
       <Filter>Source\FriendsNotIncluded</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FriendsNotIncluded\FriendsNotIncluded.h">
+      <Filter>Source\FriendsNotIncluded</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FNIPlayerSlotData.h">
       <Filter>Source\FriendsNotIncluded</Filter>
     </ClInclude>
   </ItemGroup>
