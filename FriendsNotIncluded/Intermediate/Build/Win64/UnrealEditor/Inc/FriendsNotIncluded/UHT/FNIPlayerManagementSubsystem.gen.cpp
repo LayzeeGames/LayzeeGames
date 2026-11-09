@@ -15,11 +15,65 @@ void EmptyLinkFunctionForGeneratedCodeFNIPlayerManagementSubsystem() {}
 
 // ********** Begin Cross Module References ********************************************************
 ENGINE_API UClass* Z_Construct_UClass_UGameInstanceSubsystem();
+ENGINE_API UClass* Z_Construct_UClass_ULocalPlayer_NoRegister();
 FRIENDSNOTINCLUDED_API UClass* Z_Construct_UClass_UFNIPlayerManagementSubsystem();
 FRIENDSNOTINCLUDED_API UClass* Z_Construct_UClass_UFNIPlayerManagementSubsystem_NoRegister();
 FRIENDSNOTINCLUDED_API UScriptStruct* Z_Construct_UScriptStruct_FNIPlayerSlotData();
 UPackage* Z_Construct_UPackage__Script_FriendsNotIncluded();
 // ********** End Cross Module References **********************************************************
+
+// ********** Begin Class UFNIPlayerManagementSubsystem Function CreateAndRegisterLocalPlayer ******
+struct Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics
+{
+	struct FNIPlayerManagementSubsystem_eventCreateAndRegisterLocalPlayer_Parms
+	{
+		int32 ControllerID;
+		ULocalPlayer* ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Player Management" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Creates Unreal Local Player and registers to available slot\n" },
+#endif
+		{ "ModuleRelativePath", "FNIPlayerManagementSubsystem.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Creates Unreal Local Player and registers to available slot" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ControllerID;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::NewProp_ControllerID = { "ControllerID", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIPlayerManagementSubsystem_eventCreateAndRegisterLocalPlayer_Parms, ControllerID), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FNIPlayerManagementSubsystem_eventCreateAndRegisterLocalPlayer_Parms, ReturnValue), Z_Construct_UClass_ULocalPlayer_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::NewProp_ControllerID,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UFNIPlayerManagementSubsystem, nullptr, "CreateAndRegisterLocalPlayer", Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::PropPointers), sizeof(Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::FNIPlayerManagementSubsystem_eventCreateAndRegisterLocalPlayer_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::Function_MetaDataParams), Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::FNIPlayerManagementSubsystem_eventCreateAndRegisterLocalPlayer_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UFNIPlayerManagementSubsystem::execCreateAndRegisterLocalPlayer)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_ControllerID);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(ULocalPlayer**)Z_Param__Result=P_THIS->CreateAndRegisterLocalPlayer(Z_Param_ControllerID);
+	P_NATIVE_END;
+}
+// ********** End Class UFNIPlayerManagementSubsystem Function CreateAndRegisterLocalPlayer ********
 
 // ********** Begin Class UFNIPlayerManagementSubsystem Function GetPlayerSlotData *****************
 struct Z_Construct_UFunction_UFNIPlayerManagementSubsystem_GetPlayerSlotData_Statics
@@ -200,6 +254,7 @@ void UFNIPlayerManagementSubsystem::StaticRegisterNativesUFNIPlayerManagementSub
 {
 	UClass* Class = UFNIPlayerManagementSubsystem::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "CreateAndRegisterLocalPlayer", &UFNIPlayerManagementSubsystem::execCreateAndRegisterLocalPlayer },
 		{ "GetPlayerSlotData", &UFNIPlayerManagementSubsystem::execGetPlayerSlotData },
 		{ "HasFreePlayerSlot", &UFNIPlayerManagementSubsystem::execHasFreePlayerSlot },
 		{ "IsPlayerSlotConnected", &UFNIPlayerManagementSubsystem::execIsPlayerSlotConnected },
@@ -261,6 +316,7 @@ struct Z_Construct_UClass_UFNIPlayerManagementSubsystem_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_UFNIPlayerManagementSubsystem_CreateAndRegisterLocalPlayer, "CreateAndRegisterLocalPlayer" }, // 1760837498
 		{ &Z_Construct_UFunction_UFNIPlayerManagementSubsystem_GetPlayerSlotData, "GetPlayerSlotData" }, // 794927090
 		{ &Z_Construct_UFunction_UFNIPlayerManagementSubsystem_HasFreePlayerSlot, "HasFreePlayerSlot" }, // 3660021254
 		{ &Z_Construct_UFunction_UFNIPlayerManagementSubsystem_IsPlayerSlotConnected, "IsPlayerSlotConnected" }, // 982679783
@@ -315,10 +371,10 @@ UFNIPlayerManagementSubsystem::~UFNIPlayerManagementSubsystem() {}
 struct Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h__Script_FriendsNotIncluded_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFNIPlayerManagementSubsystem, UFNIPlayerManagementSubsystem::StaticClass, TEXT("UFNIPlayerManagementSubsystem"), &Z_Registration_Info_UClass_UFNIPlayerManagementSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIPlayerManagementSubsystem), 3737590601U) },
+		{ Z_Construct_UClass_UFNIPlayerManagementSubsystem, UFNIPlayerManagementSubsystem::StaticClass, TEXT("UFNIPlayerManagementSubsystem"), &Z_Registration_Info_UClass_UFNIPlayerManagementSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIPlayerManagementSubsystem), 1897418737U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h__Script_FriendsNotIncluded_1384794715(TEXT("/Script/FriendsNotIncluded"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h__Script_FriendsNotIncluded_3400949664(TEXT("/Script/FriendsNotIncluded"),
 	Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h__Script_FriendsNotIncluded_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h__Script_FriendsNotIncluded_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

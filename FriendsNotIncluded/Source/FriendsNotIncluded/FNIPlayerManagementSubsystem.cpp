@@ -2,6 +2,7 @@
 
 
 #include "FNIPlayerManagementSubsystem.h"
+#include "Engine/GameInstance.h"
 
 void UFNIPlayerManagementSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
@@ -123,4 +124,49 @@ int32 UFNIPlayerManagementSubsystem::GetPlayerSlotForLocalPlayer(const ULocalPla
     }
 
     return INDEX_NONE;
+}
+
+ULocalPlayer* UFNIPlayerManagementSubsystem::CreateAndRegisterLocalPlayer(int32 ControllerId)
+{
+    // Check another slot is available
+    if (!HasFreePlayerSlot())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("No free player slots available!"));
+        return nullptr;
+    }
+
+    // Get Existing GameInstance
+    UGameInstance* GameInstance = GetGameInstance();
+
+    if (!IsValid(GameInstance))
+    {
+        return nullptr;
+    }
+
+    // Create new Unreal Local Player
+    FString ErrorMessage;
+
+    ULocalPlayer* NewLocalPlayer = GameInstance->CreateLocalPlayer(ControllerId, ErrorMessage, true);
+
+    // Check player created successfully
+    if (!IsValid(NewLocalPlayer))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Failed to create Local Player"), *ErrorMessage);
+
+        return nullptr;
+    }
+
+    // Register new Local Player in Subsystem
+    const int32 PlayerSlot = RegisterLocalPlayer(NewLocalPlayer);
+
+    if (PlayerSlot == INDEX_NONE)
+    {
+        // Remove new Local player if registration failed
+        GameInstance->RemoveLocalPlayer(NewLocalPlayer);
+        return nullptr;
+    }
+
+    UE_LOG(LogTemp, Log, TEXT("Player successfully joined slot!"));
+
+    return NewLocalPlayer;
 }
