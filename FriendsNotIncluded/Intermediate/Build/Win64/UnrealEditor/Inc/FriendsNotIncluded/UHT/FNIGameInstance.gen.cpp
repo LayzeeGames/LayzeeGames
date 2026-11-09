@@ -876,14 +876,14 @@ UFNIGameInstance::~UFNIGameInstance() {}
 // ********** End Class UFNIGameInstance ***********************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics
+struct Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UFNIGameInstance, UFNIGameInstance::StaticClass, TEXT("UFNIGameInstance"), &Z_Registration_Info_UClass_UFNIGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIGameInstance), 2636235796U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_516340533(TEXT("/Script/FriendsNotIncluded"),
-	Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Group_Project_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_516340533(TEXT("/Script/FriendsNotIncluded"),
+	Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIGameInstance_h__Script_FriendsNotIncluded_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // ********** End Registration *********************************************************************
