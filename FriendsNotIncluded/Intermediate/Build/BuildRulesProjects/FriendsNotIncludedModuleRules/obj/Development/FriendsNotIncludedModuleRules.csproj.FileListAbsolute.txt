@@ -42,3 +42,47 @@ C:\Group Project\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesPro
 C:\Group Project\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsNotIncludedModuleRules.dll
 C:\Group Project\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\refint\FriendsNotIncludedModuleRules.dll
 C:\Group Project\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsNotIncludedModuleRules.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\liboo2corelinux64.so.9
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\liboo2corelinuxarm32.so.9
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\liboo2corelinuxarm64.so.9
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\oo2core_9_win64.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\oo2core_9_win32.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\oo2core_9_winuwparm64.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\runtimes\win-x64\native\UbaHost.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\runtimes\win-x64\native\UbaDetours.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\FriendsNotIncludedModuleRules.deps.json
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\FriendsNotIncludedModuleRules.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\ref\FriendsNotIncludedModuleRules.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\FriendsNotIncludedModuleRules.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.Core.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.Horde.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.IoHash.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.MsBuild.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.OIDC.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.Oodle.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.Serialization.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.UBA.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.UHT.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.Core.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.Horde.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.Horde.xml
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.IoHash.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.MsBuild.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.OIDC.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.Oodle.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.Oodle.xml
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.Serialization.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.UBA.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.UBA.xml
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.UHT.pdb
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\bin\Development\EpicGames.UHT.xml
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsNotIncludedModuleRules.csproj.AssemblyReference.cache
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsNotIncludedModuleRules.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsNotIncludedModuleRules.AssemblyInfoInputs.cache
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsNotIncludedModuleRules.AssemblyInfo.cs
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsNotIncludedModuleRules.csproj.CoreCompileInputs.cache
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsNotIncludedModuleRules.sourcelink.json
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsN.A1E0878D.Up2Date
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsNotIncludedModuleRules.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\refint\FriendsNotIncludedModuleRules.dll
+C:\Users\KiddL\Documents\GitHub\LayzeeGames\FriendsNotIncluded\Intermediate\Build\BuildRulesProjects\FriendsNotIncludedModuleRules\obj\Development\FriendsNotIncludedModuleRules.pdb

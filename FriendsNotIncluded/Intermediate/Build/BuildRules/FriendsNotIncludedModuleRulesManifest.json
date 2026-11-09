@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Group Project\\LayzeeGames\\FriendsNotIncluded\\Source\\FriendsNotIncluded\\FriendsNotIncluded.Build.cs",
-		"C:\\Group Project\\LayzeeGames\\FriendsNotIncluded\\Source\\FriendsNotIncluded.Target.cs",
-		"C:\\Group Project\\LayzeeGames\\FriendsNotIncluded\\Source\\FriendsNotIncludedEditor.Target.cs"
+		"C:\\Users\\KiddL\\Documents\\GitHub\\LayzeeGames\\FriendsNotIncluded\\Source\\FriendsNotIncluded\\FriendsNotIncluded.Build.cs",
+		"C:\\Users\\KiddL\\Documents\\GitHub\\LayzeeGames\\FriendsNotIncluded\\Source\\FriendsNotIncluded.Target.cs",
+		"C:\\Users\\KiddL\\Documents\\GitHub\\LayzeeGames\\FriendsNotIncluded\\Source\\FriendsNotIncludedEditor.Target.cs"
 	],
 	"EngineVersion": "5.6.1"
 }
