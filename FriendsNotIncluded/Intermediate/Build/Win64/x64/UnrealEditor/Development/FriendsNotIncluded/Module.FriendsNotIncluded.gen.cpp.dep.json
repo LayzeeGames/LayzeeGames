@@ -9,9 +9,12 @@
             "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fnigameinstance.gen.cpp",
             "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\source\\friendsnotincluded\\fnigameinstance.h",
             "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fnigameinstance.generated.h",
-            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fniplayerslotdata.gen.cpp",
+            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fniplayermanagementsubsystem.gen.cpp",
+            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\source\\friendsnotincluded\\fniplayermanagementsubsystem.h",
             "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\source\\friendsnotincluded\\fniplayerslotdata.h",
-            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fniplayerslotdata.generated.h"
+            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fniplayerslotdata.generated.h",
+            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fniplayermanagementsubsystem.generated.h",
+            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fniplayerslotdata.gen.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

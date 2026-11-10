@@ -39,10 +39,19 @@
     <ClInclude Include="..\..\Source\FriendsNotIncluded\FNIGameInstance.h">
       <Filter>Source\FriendsNotIncluded</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\FriendsNotIncluded\FNIGameViewportClient.cpp">
+      <Filter>Source\FriendsNotIncluded</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FriendsNotIncluded\FNIGameViewportClient.h">
+      <Filter>Source\FriendsNotIncluded</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\FriendsNotIncluded\FNIPlayerManagementSubsystem.cpp">
       <Filter>Source\FriendsNotIncluded</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FriendsNotIncluded\FNIPlayerManagementSubsystem.h">
+      <Filter>Source\FriendsNotIncluded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\FriendsNotIncluded\FNIPlayerSlotData.h">
       <Filter>Source\FriendsNotIncluded</Filter>
     </ClInclude>
     <None Include="..\..\Source\FriendsNotIncluded\FriendsNotIncluded.Build.cs">
@@ -52,11 +61,6 @@
       <Filter>Source\FriendsNotIncluded</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FriendsNotIncluded\FriendsNotIncluded.h">
-      <Filter>Source\FriendsNotIncluded</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="FNIPlayerSlotData.h">
       <Filter>Source\FriendsNotIncluded</Filter>
     </ClInclude>
   </ItemGroup>

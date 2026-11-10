@@ -68,6 +68,17 @@ int32 UFNIPlayerManagementSubsystem::RegisterLocalPlayer(ULocalPlayer* InLocalPl
 
     if (ExistingSlot != INDEX_NONE)
     {
+        UE_LOG(LogTemp, Warning,
+            TEXT("Player Already Registered | LocalPlayer: %s | Address: %p | Slot: %d | Total Players: %d"),
+            *GetNameSafe(InLocalPlayer),
+            InLocalPlayer,
+            ExistingSlot,
+            PlayerSlots.FilterByPredicate([](const FNIPlayerSlotData& Slot)
+                {
+                    return Slot.bIsConnected;
+                }).Num()
+           );
+
         return ExistingSlot;
     }
 
@@ -86,6 +97,7 @@ int32 UFNIPlayerManagementSubsystem::RegisterLocalPlayer(ULocalPlayer* InLocalPl
     }
 
     // No slots available
+    UE_LOG(LogTemp, Warning, TEXT("Player Registration Failed | No free slots"));
     return INDEX_NONE;
 }
 
