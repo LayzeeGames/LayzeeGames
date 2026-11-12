@@ -3,6 +3,8 @@
 
 #include "FNIPlayerManagementSubsystem.h"
 #include "Engine/GameInstance.h"
+#include "Engine/LocalPlayer.h"
+#include "GameFramework/PlayerController.h"
 
 void UFNIPlayerManagementSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
@@ -163,9 +165,28 @@ ULocalPlayer* UFNIPlayerManagementSubsystem::CreateAndRegisterLocalPlayer(int32 
     // Check player created successfully
     if (!IsValid(NewLocalPlayer))
     {
-        UE_LOG(LogTemp, Warning, TEXT("Failed to create Local Player"), *ErrorMessage);
+        UE_LOG(LogTemp, Warning, TEXT("Failed to create Local Player: %s"), *ErrorMessage);
 
         return nullptr;
+    }
+
+    APlayerController* NewPlayerController = NewLocalPlayer->GetPlayerController(GetWorld());
+
+    UE_LOG(LogTemp, Warning,
+        TEXT("NEW PLAYER DIAGNOSTIC | Controller ID: %d | LocalPlayer: %s | LocalPlayer Address: %p | PlayerController: %s | PlayerController Address: %p"),
+        ControllerId,
+        *GetNameSafe(NewLocalPlayer),
+        NewLocalPlayer,
+        *GetNameSafe(NewPlayerController),
+        NewPlayerController
+    );
+
+    if (IsValid(NewPlayerController))
+    {
+        UE_LOG(LogTemp, Warning,
+            TEXT("PLAYER CONTROLLER ASSOCIATION | Matches LocalPlayer: %s"),
+            NewPlayerController->GetLocalPlayer() == NewLocalPlayer ? TEXT("YES") : TEXT("NO")
+        );
     }
 
     // Register new Local Player in Subsystem

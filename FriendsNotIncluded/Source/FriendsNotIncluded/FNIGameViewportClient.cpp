@@ -8,6 +8,22 @@
 
 bool UFNIGameViewportClient::InputKey(const FInputKeyEventArgs& EventArgs)
 {
+	// TEMPORARY: Detect all pressed inputs
+	if (EventArgs.Event == IE_Pressed)
+	{
+		const int32 DeviceId = EventArgs.InputDevice.IsValid()
+			? EventArgs.InputDevice.GetId()
+			: INDEX_NONE;
+
+		UE_LOG(LogTemp, Warning,
+			TEXT("RAW INPUT | Key: %s | Controller ID: %d | Device ID: %d | Is Gamepad: %s"),
+			*EventArgs.Key.GetFName().ToString(),
+			EventArgs.ControllerId,
+			DeviceId,
+			EventArgs.IsGamepad() ? TEXT("YES") : TEXT("NO")
+		);
+	}
+
 	// Only detect gamepad button presses
 	if (EventArgs.IsGamepad() && EventArgs.Key == EKeys::Gamepad_FaceButton_Bottom && EventArgs.Event == IE_Pressed)
 	{
@@ -48,6 +64,18 @@ bool UFNIGameViewportClient::InputKey(const FInputKeyEventArgs& EventArgs)
 		{
 			LocalPlayer = GameInstanceRef->FindLocalPlayerFromControllerId(EventArgs.ControllerId);
 		}
+
+		const int32 InputDeviceId = EventArgs.InputDevice.IsValid()
+			? EventArgs.InputDevice.GetId()
+			: INDEX_NONE;
+
+		UE_LOG(LogTemp, Warning,
+			TEXT("INPUT DEVICE DIAGNOSTIC | Event Controller ID: %d | Input Device ID: %d | LocalPlayer: %s | LocalPlayer Controller ID: %d"),
+			EventArgs.ControllerId,
+			InputDeviceId,
+			*GetNameSafe(LocalPlayer),
+			IsValid(LocalPlayer) ? LocalPlayer->GetControllerId() : INDEX_NONE
+		);
 
 		// Check if player has already joined
 		if (LocalPlayer)
