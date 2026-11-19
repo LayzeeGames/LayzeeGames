@@ -38,6 +38,10 @@ void UFNIGameInstance::Init()
 
 	//Opening dice and turn information hasnt been saved yet
 	bHasSavedTurnState = false;
+
+    //Stores the starting rotation for all 4 player slots, updated before entering minigames
+    PlayerBoardRotations.Init(FRotator::ZeroRotator, 4);
+
 }
 
 bool UFNIGameInstance::AwardFragment(int32 PlayerSlot)
@@ -264,4 +268,17 @@ bool UFNIGameInstance::ClearBoardFragmentSpace(int32 SpaceID)
 
     return true;
 }
+
+void UFNIGameInstance::SavePlayerBoardRotation(int32 PlayerSlot, FRotator NewRotation)
+{
+    //Make sure the player slot exists in our rotation array
+    if (!PlayerBoardRotations.IsValidIndex(PlayerSlot))
+    {
+        return;
+    }
+
+    //Store the players current rotation in their own slot
+    PlayerBoardRotations[PlayerSlot] = NewRotation;
+}
+
 
