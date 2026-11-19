@@ -111,4 +111,12 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Turn Progress")
 	bool bHasSavedTurnState = false;
 
+	// Stores the rotation of each player , used to save the board state when changing levels sothat they face the same direction as when they left the board
+	UPROPERTY(BlueprintReadWrite, Category = "Board State")
+	TArray<FRotator> PlayerBoardRotations;
+
+	//Saves the rotation of a player so it can be restored after a minigame
+	UFUNCTION(BlueprintCallable, Category = "Board State")
+	void SavePlayerBoardRotation(int32 PlayerSlot, FRotator NewRotation);
+
 };
