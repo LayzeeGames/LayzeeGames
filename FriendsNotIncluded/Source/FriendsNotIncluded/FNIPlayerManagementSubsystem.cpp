@@ -94,6 +94,8 @@ int32 UFNIPlayerManagementSubsystem::RegisterLocalPlayer(ULocalPlayer* InLocalPl
             Slot.bIsReady = false;
             Slot.SelectedCharacterID = NAME_None;
 
+            OnPlayerSlotsChanged.Broadcast();
+
             return Slot.PlayerSlot;
         }
     }
@@ -118,6 +120,8 @@ bool UFNIPlayerManagementSubsystem::UnregisterLocalPlayer(ULocalPlayer* InLocalP
     Slot.bIsConnected = false;
     Slot.bIsReady = false;
     Slot.SelectedCharacterID = NAME_None;
+
+    OnPlayerSlotsChanged.Broadcast();
 
     return true;
 }

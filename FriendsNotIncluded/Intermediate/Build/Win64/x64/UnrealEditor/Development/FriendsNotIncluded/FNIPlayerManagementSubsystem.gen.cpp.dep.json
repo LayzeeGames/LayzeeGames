@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fniplayermanagementsubsystem.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\x64\\friendsnotincludededitor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_3.h.pch",
+        "Includes": [
+            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\friendsnotincluded\\definitions.friendsnotincluded.h",
+            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\source\\friendsnotincluded\\fniplayermanagementsubsystem.h",
+            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\source\\friendsnotincluded\\fniplayerslotdata.h",
+            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fniplayerslotdata.generated.h",
+            "c:\\users\\kiddl\\documents\\github\\layzeegames\\friendsnotincluded\\intermediate\\build\\win64\\unrealeditor\\inc\\friendsnotincluded\\uht\\fniplayermanagementsubsystem.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

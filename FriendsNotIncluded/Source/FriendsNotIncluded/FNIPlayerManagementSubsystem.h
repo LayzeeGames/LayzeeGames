@@ -7,6 +7,8 @@
 #include "FNIPlayerSlotData.h"
 #include "FNIPlayerManagementSubsystem.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlayerSlotsChanged);
+
 /**
  * 
  */
@@ -26,6 +28,10 @@ public:
 	// Stores info for all player slots
 	UPROPERTY(BlueprintReadOnly, Category = "Player Management")
 	TArray<FNIPlayerSlotData> PlayerSlots;
+
+	// Notifies listeners when player slot data changes
+	UPROPERTY(BlueprintAssignable, Category = "Player Management")
+	FOnPlayerSlotsChanged OnPlayerSlotsChanged;
 
 	// Returns info about specific player slot
 	UFUNCTION(BlueprintPure, Category = "Player Management")

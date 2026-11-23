@@ -19,8 +19,15 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class ULocalPlayer;
 struct FNIPlayerSlotData;
 
+// ********** Begin Delegate FOnPlayerSlotsChanged *************************************************
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_10_DELEGATE \
+FRIENDSNOTINCLUDED_API void FOnPlayerSlotsChanged_DelegateWrapper(const FMulticastScriptDelegate& OnPlayerSlotsChanged);
+
+
+// ********** End Delegate FOnPlayerSlotsChanged ***************************************************
+
 // ********** Begin Class UFNIPlayerManagementSubsystem ********************************************
-#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execCreateAndRegisterLocalPlayer); \
 	DECLARE_FUNCTION(execHasFreePlayerSlot); \
 	DECLARE_FUNCTION(execIsPlayerSlotConnected); \
@@ -29,7 +36,7 @@ struct FNIPlayerSlotData;
 
 FRIENDSNOTINCLUDED_API UClass* Z_Construct_UClass_UFNIPlayerManagementSubsystem_NoRegister();
 
-#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_16_INCLASS_NO_PURE_DECLS \
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUFNIPlayerManagementSubsystem(); \
 	friend struct Z_Construct_UClass_UFNIPlayerManagementSubsystem_Statics; \
@@ -40,7 +47,7 @@ public: \
 	DECLARE_SERIALIZER(UFNIPlayerManagementSubsystem)
 
 
-#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_18_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UFNIPlayerManagementSubsystem(); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -52,13 +59,13 @@ public: \
 	NO_API virtual ~UFNIPlayerManagementSubsystem();
 
 
-#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_13_PROLOG
-#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_16_GENERATED_BODY \
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_15_PROLOG
+#define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_16_INCLASS_NO_PURE_DECLS \
-	FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_16_ENHANCED_CONSTRUCTORS \
+	FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_18_INCLASS_NO_PURE_DECLS \
+	FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
