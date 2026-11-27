@@ -73,3 +73,11 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+*.log
+
+# Friends Not Included - Unreal Engine generated folders
+FriendsNotIncluded/Intermediate/
+FriendsNotIncluded/Binaries/
+FriendsNotIncluded/Saved/
+FriendsNotIncluded/DerivedDataCache/
