@@ -276,6 +276,36 @@ DEFINE_FUNCTION(UFNIPlayerManagementSubsystem::execIsPlayerSlotConnected)
 }
 // ********** End Class UFNIPlayerManagementSubsystem Function IsPlayerSlotConnected ***************
 
+// ********** Begin Class UFNIPlayerManagementSubsystem Function PrepareLocalPlayersForCharacterSelect 
+struct Z_Construct_UFunction_UFNIPlayerManagementSubsystem_PrepareLocalPlayersForCharacterSelect_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Player Management" },
+		{ "ModuleRelativePath", "FNIPlayerManagementSubsystem.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UFNIPlayerManagementSubsystem_PrepareLocalPlayersForCharacterSelect_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UFNIPlayerManagementSubsystem, nullptr, "PrepareLocalPlayersForCharacterSelect", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UFNIPlayerManagementSubsystem_PrepareLocalPlayersForCharacterSelect_Statics::Function_MetaDataParams), Z_Construct_UFunction_UFNIPlayerManagementSubsystem_PrepareLocalPlayersForCharacterSelect_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_UFNIPlayerManagementSubsystem_PrepareLocalPlayersForCharacterSelect()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UFNIPlayerManagementSubsystem_PrepareLocalPlayersForCharacterSelect_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UFNIPlayerManagementSubsystem::execPrepareLocalPlayersForCharacterSelect)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->PrepareLocalPlayersForCharacterSelect();
+	P_NATIVE_END;
+}
+// ********** End Class UFNIPlayerManagementSubsystem Function PrepareLocalPlayersForCharacterSelect 
+
 // ********** Begin Class UFNIPlayerManagementSubsystem ********************************************
 void UFNIPlayerManagementSubsystem::StaticRegisterNativesUFNIPlayerManagementSubsystem()
 {
@@ -285,6 +315,7 @@ void UFNIPlayerManagementSubsystem::StaticRegisterNativesUFNIPlayerManagementSub
 		{ "GetPlayerSlotData", &UFNIPlayerManagementSubsystem::execGetPlayerSlotData },
 		{ "HasFreePlayerSlot", &UFNIPlayerManagementSubsystem::execHasFreePlayerSlot },
 		{ "IsPlayerSlotConnected", &UFNIPlayerManagementSubsystem::execIsPlayerSlotConnected },
+		{ "PrepareLocalPlayersForCharacterSelect", &UFNIPlayerManagementSubsystem::execPrepareLocalPlayersForCharacterSelect },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -358,6 +389,7 @@ struct Z_Construct_UClass_UFNIPlayerManagementSubsystem_Statics
 		{ &Z_Construct_UFunction_UFNIPlayerManagementSubsystem_GetPlayerSlotData, "GetPlayerSlotData" }, // 794927090
 		{ &Z_Construct_UFunction_UFNIPlayerManagementSubsystem_HasFreePlayerSlot, "HasFreePlayerSlot" }, // 3660021254
 		{ &Z_Construct_UFunction_UFNIPlayerManagementSubsystem_IsPlayerSlotConnected, "IsPlayerSlotConnected" }, // 982679783
+		{ &Z_Construct_UFunction_UFNIPlayerManagementSubsystem_PrepareLocalPlayersForCharacterSelect, "PrepareLocalPlayersForCharacterSelect" }, // 741592232
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -411,10 +443,10 @@ UFNIPlayerManagementSubsystem::~UFNIPlayerManagementSubsystem() {}
 struct Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h__Script_FriendsNotIncluded_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFNIPlayerManagementSubsystem, UFNIPlayerManagementSubsystem::StaticClass, TEXT("UFNIPlayerManagementSubsystem"), &Z_Registration_Info_UClass_UFNIPlayerManagementSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIPlayerManagementSubsystem), 2596955058U) },
+		{ Z_Construct_UClass_UFNIPlayerManagementSubsystem, UFNIPlayerManagementSubsystem::StaticClass, TEXT("UFNIPlayerManagementSubsystem"), &Z_Registration_Info_UClass_UFNIPlayerManagementSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFNIPlayerManagementSubsystem), 838536414U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h__Script_FriendsNotIncluded_3342568281(TEXT("/Script/FriendsNotIncluded"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h__Script_FriendsNotIncluded_1772682954(TEXT("/Script/FriendsNotIncluded"),
 	Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h__Script_FriendsNotIncluded_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h__Script_FriendsNotIncluded_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

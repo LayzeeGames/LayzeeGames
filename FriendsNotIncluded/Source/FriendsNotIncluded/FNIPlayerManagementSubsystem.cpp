@@ -48,7 +48,7 @@ bool UFNIPlayerManagementSubsystem::HasFreePlayerSlot() const
 {
     for (const FNIPlayerSlotData& Slot : PlayerSlots)
     {
-        if (!Slot.bIsConnected)
+        if (!Slot.bIsConnected && !IsValid(Slot.LocalPlayer))
         {
             return true;
         }
@@ -70,29 +70,46 @@ int32 UFNIPlayerManagementSubsystem::RegisterLocalPlayer(ULocalPlayer* InLocalPl
 
     if (ExistingSlot != INDEX_NONE)
     {
-        UE_LOG(LogTemp, Warning,
-            TEXT("Player Already Registered | LocalPlayer: %s | Address: %p | Slot: %d | Total Players: %d"),
-            *GetNameSafe(InLocalPlayer),
-            InLocalPlayer,
-            ExistingSlot,
-            PlayerSlots.FilterByPredicate([](const FNIPlayerSlotData& Slot)
-                {
-                    return Slot.bIsConnected;
-                }).Num()
-           );
+        FNIPlayerSlotData& Slot = PlayerSlots[ExistingSlot];
+
+        //The player was prepared but hasn't joined yet
+        if (!Slot.bIsConnected)
+        {
+            Slot.bIsConnected = true;
+            Slot.bIsReady = false;
+            Slot.SelectedCharacterID = NAME_None;
+
+            UE_LOG(LogTemp, Log,
+                TEXT("Prepared local player joined | Slot: %d"),
+                ExistingSlot);
+
+            OnPlayerSlotsChanged.Broadcast();
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning,
+                TEXT("Player already registered | Local player: %s | Address: %p | Slot: %d"),
+                *GetNameSafe(InLocalPlayer),
+                InLocalPlayer,
+                ExistingSlot);
+        }
 
         return ExistingSlot;
     }
 
-    // Find first available slot
+    // Find first available unreserved slot
     for (FNIPlayerSlotData& Slot : PlayerSlots)
     {
-        if (!Slot.bIsConnected)
+        if (!Slot.bIsConnected && !IsValid(Slot.LocalPlayer))
         {
             Slot.LocalPlayer = InLocalPlayer;
             Slot.bIsConnected = true;
             Slot.bIsReady = false;
             Slot.SelectedCharacterID = NAME_None;
+
+            UE_LOG(LogTemp, Log,
+                TEXT("New local player registered | Slot: %d"),
+                Slot.PlayerSlot);
 
             OnPlayerSlotsChanged.Broadcast();
 
@@ -101,7 +118,9 @@ int32 UFNIPlayerManagementSubsystem::RegisterLocalPlayer(ULocalPlayer* InLocalPl
     }
 
     // No slots available
-    UE_LOG(LogTemp, Warning, TEXT("Player Registration Failed | No free slots"));
+    UE_LOG(LogTemp, Warning, 
+        TEXT("Player Registration Failed | No free slots"));
+
     return INDEX_NONE;
 }
 
@@ -206,4 +225,111 @@ ULocalPlayer* UFNIPlayerManagementSubsystem::CreateAndRegisterLocalPlayer(int32 
     UE_LOG(LogTemp, Log, TEXT("Player successfully joined slot!"));
 
     return NewLocalPlayer;
+}
+
+void UFNIPlayerManagementSubsystem::PrepareLocalPlayersForCharacterSelect()
+{
+    UGameInstance* GameInstanceRef = GetGameInstance();
+
+    if (!IsValid(GameInstanceRef))
+    {
+        UE_LOG(LogTemp, Error,
+            TEXT("PrepareLocalPlayers: GameInstance is invalid"));
+        return;
+    }
+
+    //Prepare local players for controller IDs 0-3
+    for (int32 ControllerID = 0; ControllerID < MaxPlayers; ControllerID++)
+    {
+        ULocalPlayer* LocalPlayer = GameInstanceRef->FindLocalPlayerFromControllerId(ControllerID);
+
+        //Player 1 should already exist when the gam starts
+        if (!LocalPlayer && ControllerID == 0)
+        {
+            LocalPlayer = GameInstanceRef->GetFirstGamePlayer();
+        }
+
+        //Create additional local players if they don't exist
+        if (!LocalPlayer && ControllerID > 0)
+        {
+            FString ErrorMessage;
+
+            LocalPlayer = GameInstanceRef->CreateLocalPlayer(
+                ControllerID,
+                ErrorMessage,
+                true
+            );
+
+            if (!IsValid(LocalPlayer))
+            {
+                UE_LOG(LogTemp, Error,
+                    TEXT("Failed to prepare local player for controller %d: %s"),
+                    ControllerID,
+                    *ErrorMessage);
+
+                continue;
+            }
+        }
+
+        if (!IsValid(LocalPlayer))
+        {
+            UE_LOG(LogTemp, Error,
+                TEXT("No local player found for controller %d"),
+                ControllerID);
+
+            continue;
+        }
+
+        //Don't assign same local player twice
+        const int32 ExistingSlot = GetPlayerSlotForLocalPlayer(LocalPlayer);
+
+        if (ExistingSlot != INDEX_NONE)
+        {
+            UE_LOG(LogTemp, Log,
+                TEXT("Controller %d already has a  reserved player slot %d"),
+                ControllerID,
+                ExistingSlot);
+
+            continue;
+        }
+
+        if (!PlayerSlots.IsValidIndex(ControllerID))
+        {
+            continue;
+        }
+
+        FNIPlayerSlotData& Slot = PlayerSlots[ControllerID];
+
+        //Don't overwrite slot belonging to another local player
+        if (IsValid(Slot.LocalPlayer) && Slot.LocalPlayer != LocalPlayer)
+        {
+            UE_LOG(LogTemp, Error,
+                TEXT("Cannot reserve player slot %d: slot is already assigned"),
+                ControllerID);
+
+            continue;
+        }
+
+        Slot.LocalPlayer = LocalPlayer;
+
+        if (ControllerID == 0)
+        {
+            //Player 1 is already active in the main menu
+            RegisterLocalPlayer(LocalPlayer);
+        }
+        else
+        {
+            //Reserve the slot but don't mark as joined yet
+            Slot.bIsConnected = false;
+            Slot.bIsReady = false;
+            Slot.SelectedCharacterID = NAME_None;
+
+            UE_LOG(LogTemp, Log,
+                TEXT("Prepared local player for controller %d in slot %d"),
+                ControllerID,
+                ControllerID);
+        }
+    }
+
+    OnPlayerSlotsChanged.Broadcast();
 }

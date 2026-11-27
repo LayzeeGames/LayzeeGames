@@ -49,6 +49,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Player Management")
 	ULocalPlayer* CreateAndRegisterLocalPlayer(int32 ControllerID);
 
+	UFUNCTION(BlueprintCallable, Category = "Player Management")
+	void PrepareLocalPlayersForCharacterSelect();
+
 	// Registers a Unreal Local Player
 	int32 RegisterLocalPlayer(ULocalPlayer* InLocalPlayer);
 

@@ -28,6 +28,7 @@ FRIENDSNOTINCLUDED_API void FOnPlayerSlotsChanged_DelegateWrapper(const FMultica
 
 // ********** Begin Class UFNIPlayerManagementSubsystem ********************************************
 #define FID_Users_KiddL_Documents_GitHub_LayzeeGames_FriendsNotIncluded_Source_FriendsNotIncluded_FNIPlayerManagementSubsystem_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execPrepareLocalPlayersForCharacterSelect); \
 	DECLARE_FUNCTION(execCreateAndRegisterLocalPlayer); \
 	DECLARE_FUNCTION(execHasFreePlayerSlot); \
 	DECLARE_FUNCTION(execIsPlayerSlotConnected); \
